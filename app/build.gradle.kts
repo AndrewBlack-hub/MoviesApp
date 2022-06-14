@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -63,4 +65,25 @@ dependencies {
 
     //Compose Navigation
     implementation("androidx.navigation:navigation-compose:${Versions.navigationVersion}")
+    // Retrofit
+//    def retrofit_version = "2.9.0"
+    implementation("com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}")
+    implementation("com.squareup.retrofit2:converter-gson:${Versions.retrofitVersion}")
+    implementation("com.squareup.okhttp3:okhttp:${Versions.okhttpVersion}")
+
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+
+    // Coroutine Lifecycle Scopes
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.1")
+    implementation("androidx.activity:activity-ktx:1.4.0")
+    implementation("androidx.compose.runtime:runtime-livedata:${Versions.composeVersion}")
+
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.41")
+    kapt("com.google.dagger:hilt-compiler:2.41")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 }
