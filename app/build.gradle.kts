@@ -1,8 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id("kotlin-kapt")
 }
 
 android {
@@ -19,6 +19,10 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+    }
+
+    kapt {
+        correctErrorTypes = true
     }
 
     buildTypes {
@@ -83,7 +87,7 @@ dependencies {
     implementation("androidx.compose.runtime:runtime-livedata:${Versions.composeVersion}")
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.41")
-    kapt("com.google.dagger:hilt-compiler:2.41")
+    implementation("com.google.dagger:hilt-android:2.42")
+    kapt("com.google.dagger:hilt-compiler:2.42")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 }
